@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('web-project:server');
+var debug = require('debug')('hsdp-web-management:server');
 var http = require('http');
 
 /**
