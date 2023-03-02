@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.my_btn{
+  background-color: rgb(37, 76, 218);
+  color: white;
+
+  width:100px;
+  height:30px;
+}
