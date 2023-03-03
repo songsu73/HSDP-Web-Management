@@ -5,6 +5,7 @@ for (var i = 0; i < list_HSDP_web.length; i++){
         arr_HSDP_Client.push(list_HSDP_web[i])
     }
 }
+
 const set = new Set(arr_HSDP_Client);
 arr_HSDP_Client= [...set]; //- HSDP Client IP를 중복제거하고 담은 배열
 const div_status = document.getElementById("div_status")
