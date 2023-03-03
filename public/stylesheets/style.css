@@ -36,10 +36,15 @@ a {
 
 
 .div_status{
-  width : 10%;
+  width : 15%;
   float : left;
   margin : 3px
+}
 
+.div_server_status{
+  width : 28%;
+  float: left;
+  margin: 3px;
 }
 
 .p_status{

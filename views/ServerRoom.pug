@@ -1,7 +1,6 @@
 extends index
 
 block server_status
-    p 서버실로 이동되었습니다
-    div 서버실 이동 성공!
-
+    div(id="div_status", style="float:right;width:60%")
+    script(src="javascripts/serverroom.js")
     script document.getElementById('server_btn').style.backgroundColor = "blue";
