@@ -7,10 +7,41 @@ a {
   color: #00B7FF;
 }
 
-.my_btn{
-  background-color: rgb(37, 76, 218);
+.title_btn{
+  background-color: rgb(79, 228, 254);
   color: white;
-
-  width:100px;
+  width:15%;
   height:30px;
+  margin:20px 20px;
+}
+
+.indicate_normal{
+  color:black;
+  background-color: greenyellow;
+  text-align: center;
+  border : 2px solid greenyellow
+}
+.indicate_warning{
+  color: black;
+  background-color: yellow;
+  text-align: center;
+  border : 2px solid yellow
+}
+.indicate_connection_error{
+  color:white;
+  background-color:red;
+  text-align: center;
+  border : 2px solid red
+}
+
+
+.div_status{
+  width : 10%;
+  float : left;
+  margin : 3px
+
+}
+
+.p_status{
+  color : red
 }

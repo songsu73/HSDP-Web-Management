@@ -12,10 +12,10 @@ xmlhttp.send();
 if (xmlhttp.status == 200) { 
     HSDP_web_list = xmlhttp.responseText;
 }
-Lobis_web_list = Lobis_web_list.replace(/\n/gi,"\t")
-HSDP_web_list = HSDP_web_list.replace(/\n/gi,"\t")
-Lobis_web_list = Lobis_web_list.split('\t');
-HSDP_web_list = HSDP_web_list.split('\t');
+list_Lobis_web = Lobis_web_list.replace(/\n/gi,"\t")
+list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t")
+list_Lobis_web = list_Lobis_web.split('\t');
+list_HSDP_web  = list_HSDP_web.split('\t');
 
 document.write("<br>")
 // for (var i = 0; i < Lobis_web_list.length; i++) {
