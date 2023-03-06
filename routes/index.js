@@ -4,16 +4,12 @@ var fs = require('fs');
 
 /* GET home page. */
 
-Lobis_web_list = fs.readFileSync('routes/Lobis_web.list','utf-8')
-
-Lobis_web_list = Lobis_web_list.split("\t")
-
 router.get('/', function(req, res, next) {
-  res.render('index', { Lobis_web_list: Lobis_web_list });
+  res.render('index');
 });
 router.get('/ServerRoom',function(req,res){
   res.render('ServerRoom');
-})
+});
 router.get('/101', function(req,res) {
   res.render('101' );
 });
@@ -25,5 +21,8 @@ router.get('/103', function(req,res) {
 });
 router.get('/104', function(req,res) {
   res.render('104' );
+});
+router.get('/WholeServer', function(req,res){
+  res.render('WholeServer')
 });
 module.exports = router;

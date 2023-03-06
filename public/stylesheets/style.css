@@ -9,8 +9,8 @@ a {
 
 .title_btn{
   background-color: rgb(79, 228, 254);
-  color: white;
-  width:15%;
+  color: rgb(255, 255, 255);
+  width:13%;
   height:30px;
   margin:20px 20px;
 }
@@ -19,30 +19,38 @@ a {
   color:black;
   background-color: greenyellow;
   text-align: center;
-  border : 2px solid greenyellow
+  border : 2px solid greenyellow;
+  padding : 3px 3px;
 }
 .indicate_warning{
+  padding : 3px 3px;
   color: black;
   background-color: yellow;
   text-align: center;
   border : 2px solid yellow
 }
 .indicate_connection_error{
+  padding : 3px 3px;
   color:white;
   background-color:red;
   text-align: center;
   border : 2px solid red
 }
-
-
-.div_status{
-  width : 15%;
+.div_index_status{
+  float : right;
+  width : 80%;
+}
+.div_Whole_status{
+  width: 5%;
+  margin: 3px;
+  float : left;
+}
+.div_part_status{
   float : left;
   margin : 3px
 }
 
 .div_server_status{
-  width : 28%;
   float: left;
   margin: 3px;
 }

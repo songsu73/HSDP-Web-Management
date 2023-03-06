@@ -1,7 +1,9 @@
 extends index
 
 block server_status
-    div(id="div_status", style="float:right;width:50%")
-        
-    script(src="javascripts/101.js")
+    div(id="div_status", class="div_index_status")
+        div(id="div_MSKclient", style="width:16%;float:left")
+        div(id="div_Address", style="width:80%;float:left")
+    div(style="clear:left")
+    script(src="javascripts/101-test.js")
     script document.getElementById('101_btn').style.backgroundColor = "blue";

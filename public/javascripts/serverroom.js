@@ -1,20 +1,6 @@
-var arr_HSDP_Client = [];
-
-for (var i = 0; i < list_HSDP_web.length; i++){
-    if (i % 5 === 1){
-        arr_HSDP_Client.push(list_HSDP_web[i])
-    }
-}
-
-const set = new Set(arr_HSDP_Client);
-arr_HSDP_Client= [...set]; //- HSDP Client IP를 중복제거하고 담은 배열
+var num_div = 0 
 const div_status = document.getElementById("div_status")
 
-
-
-
-
-var num_div = 0 
 for (arr in arr_HSDP_Client){
     if (arr % 10 === 0){
         const div = document.createElement("div");
