@@ -2,18 +2,19 @@ extends layout
 
 block content
   //- 버튼 구역
-  div
+  div(class="div_title_btn")
     button(class="title_btn", onclick="location.href='/WholeServer'",id="Whole_btn") 전체 서버
-    button(class='title_btn', onclick="location.href='/ServerRoom'", id="server_btn") 서버실
+    button(class='title_btn', onclick="location.href='/ServerRoom'", id="server_btn") HSDP_Client
     button(class='title_btn', onclick="location.href='/101'", id="101_btn") 101동
     button(class='title_btn', onclick="location.href='/102'", id="102_btn") 102동
     button(class='title_btn', onclick="location.href='/103'", id="103_btn") 103동
     button(class='title_btn', onclick="location.href='/104'", id="104_btn") 104동
   //- 점등 안내 구역
   div
-    div(class="indicate_normal", style="float:left; width:20%;margin:3%") 정상
-    div(class="indicate_warning", style=" float:left; width:20%;margin:3%") 이상
-    div(class="indicate_connection_error", style="float:left; width:20%;margin:3%") 연결끊김
+    div(class="indicate_normal", style="float:left; width:20%;margin-left:1px") 정상
+    div(class="indicate_warning", style=" float:left; width:20%;margin-left:1px") 이상
+    div(class="indicate_connection_error", style="float:left; width:20%;margin-left:1px") 연결끊김
+    button(class="", style="float:right;height:100%;width:10%;border:1px soild black") 즉시조회
     p(style="clear:left")
 
   //- 세대별 list파일 파싱 스크립트 호출
