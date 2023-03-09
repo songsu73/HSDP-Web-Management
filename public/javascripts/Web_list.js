@@ -6,6 +6,9 @@ var arr_102_ClientIP = [];
 var arr_103_ClientIP = [];
 var arr_104_ClientIP = [];
 
+fs.readdir('javascripts', (err, fileList) => {
+    console.log(fileList)
+})
 xmlhttp.open("GET", "javascripts/Lobis_web.list",false);
 xmlhttp.send();
 if (xmlhttp.status == 200) { 
@@ -17,6 +20,14 @@ xmlhttp.send();
 if (xmlhttp.status == 200) { 
     HSDP_web_list = xmlhttp.responseText;
 }
+
+xmlhttp.open("GET","javascrips/HSDP_Client_web.list",false);
+xmlhttp.send();
+if(xmlhttp.status == 200){
+
+}
+
+
 list_Lobis_web = Lobis_web_list.replace(/\s\s\s\s/g,"\s").replace(/\s\s\s/g,"\s").replace(/\s\s/g,"\s").replace(/\s/g,"\t").replace(/\n/g,"\t").replace(/s/g,"\t")
 list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t")
 list_Lobis_web = list_Lobis_web.split('\t');
