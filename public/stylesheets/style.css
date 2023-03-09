@@ -2,24 +2,22 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
+.div_title_btn{
+  border:1px solid black
 }
-
 .title_btn{
   background-color: rgb(79, 228, 254);
   color: rgb(255, 255, 255);
   width:13%;
   height:30px;
   margin:20px 20px;
+  border : 1px solid black;
 }
-
 .indicate_normal{
   color:black;
   background-color: greenyellow;
   text-align: center;
-  border : 2px solid greenyellow;
+  border : 2px solid black;
   padding : 3px 3px;
 }
 .indicate_warning{
@@ -27,14 +25,14 @@ a {
   color: black;
   background-color: yellow;
   text-align: center;
-  border : 2px solid yellow
+  border : 2px solid black;
 }
 .indicate_connection_error{
   padding : 3px 3px;
   color:white;
   background-color:red;
   text-align: center;
-  border : 2px solid red
+  border : 2px solid black;
 }
 .div_index_status{
   float : right;
@@ -46,15 +44,22 @@ a {
   float : left;
 }
 .div_part_status{
-  float : left;
-  margin : 3px
+  float:left;
 }
 
+.div_part_status_title{
+  float:static;
+  width : 100%
+}
 .div_server_status{
   float: left;
   margin: 3px;
 }
-
 .p_status{
   color : red
+}
+.div_mskclient_part{
+  height: 100px;
+  margin: 30px 5px 0px 5px
+
 }

@@ -18,6 +18,8 @@ for (arr in arr_HSDP_Client){
     const div_server = document.getElementById("div_server"+num_div)
     const p1 = document.createElement("p");
     const p_text = document.createTextNode("MSK-102("+(Number(arr)+1)+"/"+(arr_HSDP_Client.length)+")");
+    p1.setAttribute("id","MSK-102(" + (Number(arr)+1) + "/" + arr_HSDP_Client.length + ")")
+    p1.setAttribute("onclick","evt_MSK_click(this)")
     p1.appendChild(p_text);
     p1.setAttribute("class","indicate_normal");
     div_server.appendChild(p1)
