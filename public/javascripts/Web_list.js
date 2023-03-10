@@ -1,4 +1,3 @@
-let Lobis_web_list = null
 let xmlhttp = new XMLHttpRequest();
 var arr_HSDP_Client = [];
 var arr_101_ClientIP = [];
@@ -6,9 +5,7 @@ var arr_102_ClientIP = [];
 var arr_103_ClientIP = [];
 var arr_104_ClientIP = [];
 
-fs.readdir('javascripts', (err, fileList) => {
-    console.log(fileList)
-})
+
 xmlhttp.open("GET", "javascripts/Lobis_web.list",false);
 xmlhttp.send();
 if (xmlhttp.status == 200) { 
@@ -21,17 +18,30 @@ if (xmlhttp.status == 200) {
     HSDP_web_list = xmlhttp.responseText;
 }
 
-xmlhttp.open("GET","javascrips/HSDP_Client_web.list",false);
+xmlhttp.open("GET","javascripts/HSDP_Client_web.list",false);
 xmlhttp.send();
 if(xmlhttp.status == 200){
+    HSDP_Client_web_list = xmlhttp.responseText;
+    HSDP_Client_web_list = HSDP_Client_web_list.replace(/\n/gi,"\t")
+}
 
+xmlhttp.open("GET","javascripts/HSDP_Server_web.list",false);
+xmlhttp.send();
+if(xmlhttp.status = 200){
+    HSDP_Server_web_list = xmlhttp.responseText;
+    HSDP_Server_web_list = HSDP_Server_web_list.replace(/\n/gi,"\t")
 }
 
 
 list_Lobis_web = Lobis_web_list.replace(/\s\s\s\s/g,"\s").replace(/\s\s\s/g,"\s").replace(/\s\s/g,"\s").replace(/\s/g,"\t").replace(/\n/g,"\t").replace(/s/g,"\t")
-list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t")
+list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t");
 list_Lobis_web = list_Lobis_web.split('\t');
 list_HSDP_web  = list_HSDP_web.split('\t');
+list_HSDP_Client_web = HSDP_Client_web_list.split('\t');
+list_Server_web = HSDP_Server_web_list.split('\t');
+
+console.log(list_Server_web);
+
 
 for (var i = 0; i < (list_HSDP_web.length/7); i++){
     arr_HSDP_Client.push(list_HSDP_web[i*7+1])

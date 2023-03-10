@@ -6,6 +6,7 @@ for (arr in arr_HSDP_Client){
         const div = document.createElement("div");
         div.setAttribute("id","div_server"+num_div)
         div.setAttribute("class","div_server_status")
+        div.setAttribute("style","float:left")
         div_status.appendChild(div);
         num_div++;
     }
@@ -22,5 +23,11 @@ for (arr in arr_HSDP_Client){
     p1.setAttribute("onclick","evt_MSK_click(this)")
     p1.appendChild(p_text);
     p1.setAttribute("class","indicate_normal");
+    p1.setAttribute("style","padding: 7px 13px")
     div_server.appendChild(p1)
 }
+
+
+var MSK_Server = document.getElementById("p_MSK_Server")
+MSK_Server.setAttribute("style","width:15%;padding: 20% 0%")
+

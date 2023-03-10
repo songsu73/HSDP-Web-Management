@@ -100,3 +100,5 @@ for(clientIP of arr_102_ClientIP){
 }
 
 
+var MSK_Server = document.getElementById("p_MSK_Server")
+MSK_Server.setAttribute("style","width:15%;padding: 40% 0%")

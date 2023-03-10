@@ -13,22 +13,28 @@ body {
   margin:20px 20px;
   border : 1px solid black;
 }
+.MSK_Server{
+  color:black;
+  background-color: mintcream;
+  text-align:center;
+  border:2px solid paleturquoise
+}
 .indicate_normal{
   color:black;
   background-color: greenyellow;
   text-align: center;
   border : 2px solid black;
-  padding : 3px 3px;
+  padding : 1px 1px;
 }
 .indicate_warning{
-  padding : 3px 3px;
+  padding : 1px 1px;
   color: black;
   background-color: yellow;
   text-align: center;
   border : 2px solid black;
 }
 .indicate_connection_error{
-  padding : 3px 3px;
+  padding : 1px 1px;
   color:white;
   background-color:red;
   text-align: center;
