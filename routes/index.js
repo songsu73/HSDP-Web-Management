@@ -5,7 +5,7 @@ var fs = require('fs');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('WholeServer');
 });
 router.get('/ServerRoom',function(req,res){
   res.render('ServerRoom');
