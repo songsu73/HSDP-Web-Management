@@ -10,7 +10,14 @@ for(clientIP of arr_102_ClientIP){
         normal, warning, connection_error로 분류해서 적용
         담는 변수는 str_clientIP_status
     */
-    var str_clientIP_status = "normal"
+    bool_pingtest = JSON.parse(String(dict_HSDP_Client_web[clientIP]).toLowerCase())
+    if(bool_pingtest === true){
+        str_clientIP_status = "normal"
+       }else if(bool_pingtest === false){
+           str_clientIP_status = "connection_error"
+       }else {
+           str_clientIP_status = "warning"
+       }
     
     const div_mskclient_part = document.createElement("div")
     div_mskclient_part.setAttribute("class","div_mskclient_part")
@@ -25,7 +32,7 @@ for(clientIP of arr_102_ClientIP){
     p_MSKclient.setAttribute("id","MSK-102(" + index + "/" + arr_HSDP_Client.length + ")")
     p_MSKclient.setAttribute("onclick","evt_MSK_click(this)")
     p_MSKclient.setAttribute("class","indicate_"+str_clientIP_status)
-    p_MSKclient.setAttribute("style","margin:0px 5px 0px 5px;align-items:center")
+    p_MSKclient.setAttribute("style","margin:0px 0px 0px 0px;align-items:center")
     p_MSKclient.appendChild(p_MSKclient_index)
     div_mskclient_part.appendChild(p_MSKclient)
     for(var i = 0; i< (list_Lobis_web.length/8);i++){
@@ -48,7 +55,7 @@ for(clientIP of arr_102_ClientIP){
             p_Address.setAttribute("id",i)
             p_Address.setAttribute("onclick","evt_Lobis_click(this)")
             p_Address.setAttribute("class","indicate_"+str_clientIP_status)
-            p_Address.setAttribute("style", "float:left;margin:1px 1px 1px 1px")
+            p_Address.setAttribute("style", "float:left;margin:1px 1px 1px 1px;width:70px")
             p_Address.appendChild(p_Address_index)
             div_Address_part.appendChild(p_Address)
         }
@@ -88,7 +95,7 @@ for(clientIP of arr_102_ClientIP){
             p_Address.setAttribute("id",i)
             p_Address.setAttribute("onclick","evt_HSDP_click(this)")
             p_Address.setAttribute("class","indicate_"+str_clientIP_status)
-            p_Address.setAttribute("style", "height:20px;float:left;margin:1px 1px 1px 1px")
+            p_Address.setAttribute("style", "float:left;margin:1px 1px 1px 1px;width:70px")
             p_Address.appendChild(p_Address_index)
             div_Address_part.appendChild(p_Address)
         }
@@ -99,6 +106,6 @@ for(clientIP of arr_102_ClientIP){
     index++
 }
 
-
 var MSK_Server = document.getElementById("p_MSK_Server")
 MSK_Server.setAttribute("style","width:15%;padding: 40% 0%")
+

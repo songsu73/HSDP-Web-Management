@@ -1,21 +1,24 @@
 let xmlhttp = new XMLHttpRequest();
+var dict_HSDP_Client_web = {};
 var arr_HSDP_Client = [];
 var arr_101_ClientIP = [];
 var arr_102_ClientIP = [];
 var arr_103_ClientIP = [];
 var arr_104_ClientIP = [];
 
-
 xmlhttp.open("GET", "javascripts/Lobis_web.list",false);
 xmlhttp.send();
 if (xmlhttp.status == 200) { 
     Lobis_web_list = xmlhttp.responseText;
+    list_Lobis_web = Lobis_web_list.replace(/\s\s\s\s/g,"\s").replace(/\s\s\s/g,"\s").replace(/\s\s/g,"\s").replace(/\s/g,"\t").replace(/\n/g,"\t").replace(/s/g,"\t")
 }
 
 xmlhttp.open("GET", "javascripts/HSDP_web.list",false);
 xmlhttp.send();
 if (xmlhttp.status == 200) { 
     HSDP_web_list = xmlhttp.responseText;
+    list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t");
+    
 }
 
 xmlhttp.open("GET","javascripts/HSDP_Client_web.list",false);
@@ -32,16 +35,10 @@ if(xmlhttp.status = 200){
     HSDP_Server_web_list = HSDP_Server_web_list.replace(/\n/gi,"\t")
 }
 
-
-list_Lobis_web = Lobis_web_list.replace(/\s\s\s\s/g,"\s").replace(/\s\s\s/g,"\s").replace(/\s\s/g,"\s").replace(/\s/g,"\t").replace(/\n/g,"\t").replace(/s/g,"\t")
-list_HSDP_web = HSDP_web_list.replace(/\n/gi,"\t");
 list_Lobis_web = list_Lobis_web.split('\t');
 list_HSDP_web  = list_HSDP_web.split('\t');
 list_HSDP_Client_web = HSDP_Client_web_list.split('\t');
 list_Server_web = HSDP_Server_web_list.split('\t');
-
-console.log(list_Server_web);
-
 
 for (var i = 0; i < (list_HSDP_web.length/7); i++){
     arr_HSDP_Client.push(list_HSDP_web[i*7+1])
@@ -79,6 +76,10 @@ for (var i=0; i < (list_Lobis_web.length/8);i++){
             break;
     }
 }
+for (var i =0; i < (list_HSDP_Client_web.length/2);i++){
+    dict_HSDP_Client_web[list_HSDP_Client_web[i*2]] = list_HSDP_Client_web[i*2+1]
+}
+
 var set = new Set(arr_HSDP_Client);
 arr_HSDP_Client= [...set]; //- HSDP Client IP를 중복제거하고 담은 배열
 arr_HSDP_Client.sort(

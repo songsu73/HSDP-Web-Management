@@ -32,7 +32,6 @@ for (var num_apt of [101,102,103,104]){
     }else {
      str_clientIP_status = "warning"
     }
-    console.log(str_clientIP_status)
 
     dict_HSDP_success[list_HSDP_web[i*7+4]] = str_clientIP_status; //- 성공 분류 코드, 딕셔너리에 모두 성공 저장
     let int_address = list_HSDP_web[i*7+4].charAt(list_HSDP_web[i*7+4].length-1);
@@ -316,7 +315,7 @@ if (arr_address_8.length != 0){
         p_last8.setAttribute("class","indicate_"+dict_HSDP_success[arr])
         p_last8.setAttribute("style","margin:1px;width:45px;")
         if(isNaN(arr)){
-            p_last3.setAttribute("style","margin:3px;width:50px;float:left");
+            p_last8.setAttribute("style","margin:3px;width:50px;float:left");
             div_isnan_address.appendChild(p_last8);
             int_isnan++}
         else{ div_last8.prepend(p_last8);}
@@ -344,7 +343,7 @@ if (arr_address_9.length != 0){
         const p_text = document.createTextNode(arr);
         p_last9.appendChild(p_text);
         p_last9.setAttribute("class","indicate_"+dict_HSDP_success[arr])
-        p_last1.setAttribute("style","margin:1px;width:45px;")
+        p_last9.setAttribute("style","margin:1px;width:45px;")
         if(isNaN(arr)){
             p_last3.setAttribute("style","margin:3px;width:50px;float:left");
             div_isnan_address.appendChild(p_last9);
