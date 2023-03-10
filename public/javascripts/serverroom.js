@@ -22,7 +22,16 @@ for (arr in arr_HSDP_Client){
     p1.setAttribute("id","MSK-102(" + (Number(arr)+1) + "/" + arr_HSDP_Client.length + ")")
     p1.setAttribute("onclick","evt_MSK_click(this)")
     p1.appendChild(p_text);
-    p1.setAttribute("class","indicate_normal");
+    index = arr_HSDP_Client[arr]
+    bool_pingtest = JSON.parse(String(dict_HSDP_Client_web[index]).toLowerCase())
+    if(bool_pingtest === true){
+        str_clientIP_status = "normal"
+       }else if(bool_pingtest === false){
+           str_clientIP_status = "connection_error"
+       }else {
+           str_clientIP_status = "warning"
+       }
+    p1.setAttribute("class","indicate_"+str_clientIP_status);
     p1.setAttribute("style","padding: 7px 13px")
     div_server.appendChild(p1)
 }
